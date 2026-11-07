@@ -1,0 +1,32 @@
+ui:
+  title: "Lab supervision - Gatus"
+  header: "Lab supervision - Gatus"
+
+alerting:
+  discord:
+    webhook-url: "https://discord.com/api/webhooks/https://discord.com/api/webhooks/1568615751483527272/YfRdVaBJ28phEMz84XOYg-NmIimZKUu6i-nL6Rri0spaWXBqDYeCS4kid7AYJiCayzyU"
+    default-alert:
+      failure-threshold: 2
+      success-threshold: 2
+      send-on-resolved: true
+
+endpoints: #site que Gatus va sonder
+
+  - name: Demo web # Le service qu'on va couper pendant la démo
+    group: lab
+    url: "http://demo-web"
+    interval: 10s
+    conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 500"
+    alerts: #important pour l'alerte
+      - type: discord
+
+  # Un site externe
+  - name: Wikipedia.org
+    group: externe
+    url: "https://fr.wikipedia.org"
+    interval: 30s
+    conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 1000"

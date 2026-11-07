@@ -1,0 +1,29 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - kuma-data:/app/data
+
+  gatus:
+    image: twinproduction/gatus:latest
+    container_name: gatus
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./gatus:/config
+
+  # Site web à "stopper" pendant la démo
+  demo-web:
+    image: nginx:alpine
+    container_name: demo-web
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+
+volumes:
+  kuma-data:
