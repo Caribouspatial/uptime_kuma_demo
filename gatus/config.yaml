@@ -3,8 +3,8 @@ ui:
   header: "Lab supervision - Gatus"
 
 alerting:
-  discord:
-    webhook-url: "https://discord.com/api/webhooks/https://discord.com/api/webhooks/1568615751483527272/YfRdVaBJ28phEMz84XOYg-NmIimZKUu6i-nL6Rri0spaWXBqDYeCS4kid7AYJiCayzyU"
+  discord: #copier le webhook discord ci dessous, ne pas remplacer toute la ligne !!!
+    webhook-url: "https://discord.com/api/webhooks/https://discord.com/api/webhooks/WEBHOOK_ICI"
     default-alert:
       failure-threshold: 2
       success-threshold: 2
