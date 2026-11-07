@@ -46,4 +46,4 @@ Faite un "docker stop demo-web"
 
 Normalement, vous recevrez deux notifications discord.
 
-Exercisse terminé
+Exercice terminé
